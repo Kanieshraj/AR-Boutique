@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Midnight Luxe Palette */
+  --color-prime: #0a0a0a;
+  /* Deep Black/Charcoal */
+  --color-sec: #121212;
+  /* Slightly lighter black */
+  --color-accent: #d4af37;
+  /* Champagne Gold */
+  --color-accent-hover: #b4941f;
+  --color-light: #f8f9fa;
+  /* Off-white */
+
+  /* Glassmorphism */
+  --color-glass-bg: rgba(20, 20, 20, 0.6);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-prime text-light font-sans antialiased selection:bg-accent selection:text-prime;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-white tracking-wide;
+  }
+
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-accent to-[#f3e5b5] text-prime font-bold uppercase tracking-wider rounded-none transition-all duration-500;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border border-accent/50 text-accent font-bold uppercase tracking-wider rounded-none transition-all duration-500;
+  }
+
+  .btn-outline:hover {
+    @apply bg-accent text-prime border-accent -translate-y-1;
+  }
+
+  .glass-card {
+    @apply bg-glass-bg backdrop-blur-xl border border-glass-border rounded-2xl shadow-2xl;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-light focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-light;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400;
+  }
+
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728];
+  }
+}
