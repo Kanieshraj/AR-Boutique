@@ -11,7 +11,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://ar-boutique-1.onrender.com', 
+    origin: 'https://ar-boutique-frontends.onrender.com', 
     optionsSuccessStatus: 200
 };
 
