@@ -11,9 +11,12 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://ar-boutique-frontends.onrender.com', 
-    optionsSuccessStatus: 200
-};
+    origin: 'https://ar-boutique-frontends.onrender.com', // Your frontend URL
+    optionsSuccessStatus: 200,
+    credentials: true // Optional: Add this if you are using cookies/sessions
+}
+app.use(cors(corsOptions));
+
 
 app.use(cors());
 app.use(express.json());
