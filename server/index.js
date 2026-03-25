@@ -11,7 +11,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://ar-boutique-frontends.onrender.com', // Your frontend URL
+    origin: 'https://ar-boutique-frontend-fihp.onrender.com', // Your frontend URL
     optionsSuccessStatus: 200,
     credentials: true // Optional: Add this if you are using cookies/sessions
 }
