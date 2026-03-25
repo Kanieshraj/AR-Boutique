@@ -10,6 +10,11 @@ connectDB();
 
 const app = express();
 
+const corsOptions = {
+    origin: 'https://ar-boutique-1.onrender.com', 
+    optionsSuccessStatus: 200
+};
+
 app.use(cors());
 app.use(express.json());
 
