@@ -16,9 +16,6 @@ const corsOptions = {
     credentials: true // Optional: Add this if you are using cookies/sessions
 }
 app.use(cors(corsOptions));
-
-
-app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
